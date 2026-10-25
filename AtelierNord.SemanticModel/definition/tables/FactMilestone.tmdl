@@ -58,4 +58,3 @@ table FactMilestone
 				    Typed
 
 	annotation PBI_ResultType = Table
-

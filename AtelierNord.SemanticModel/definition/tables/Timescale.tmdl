@@ -23,4 +23,3 @@ table Timescale
 	partition Timescale = calculated
 		mode: import
 		source = DATATABLE ( "Timescale", STRING, "Ordre", INTEGER, { { "Week", 1 }, { "Month", 2 }, { "Quarter", 3 }, { "Year", 4 } } )
-

@@ -1,9 +1,7 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
-  "name": "6b6af4a24ce75ab39cda",
   "position": {
     "x": 303.6,
-    "y": 703,
+    "y": 703.0,
     "z": 3400,
     "height": 34,
     "width": 450,
@@ -348,7 +346,7 @@
                 "Version": 2,
                 "From": [
                   {
-                    "Name": "n",
+                    "Name": "t",
                     "Entity": "New milestone name",
                     "Type": 0
                   }
@@ -362,7 +360,7 @@
                             "Column": {
                               "Expression": {
                                 "SourceRef": {
-                                  "Source": "n"
+                                  "Source": "t"
                                 }
                               },
                               "Property": "Name"
@@ -504,23 +502,7 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "6f70d7b2082c464d0486",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "New milestone name"
-              }
-            },
-            "Property": "Name"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
-  },
+  "name": "6b6af4a24ce75ab39cda",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "isHidden": true
 }

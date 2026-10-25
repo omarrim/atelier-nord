@@ -23,4 +23,3 @@ table Theme
 	partition Theme = calculated
 		mode: import
 		source = DATATABLE ( "Theme", STRING, "Ordre", INTEGER, { { "Light", 1 }, { "Dark", 2 } } )
-

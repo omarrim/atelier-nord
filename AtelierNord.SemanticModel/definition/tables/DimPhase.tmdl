@@ -30,4 +30,3 @@ table DimPhase
 				    Typed
 
 	annotation PBI_ResultType = Table
-

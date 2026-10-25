@@ -69,4 +69,3 @@ table FactAlert
 				    Typed
 
 	annotation PBI_ResultType = Table
-

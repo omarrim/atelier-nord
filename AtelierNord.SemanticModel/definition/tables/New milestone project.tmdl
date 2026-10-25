@@ -35,4 +35,3 @@ table 'New milestone project'
 		source =
 				SELECTCOLUMNS ( FILTER ( DimProject, DimProject[Status] <> "Completed" ),
 				    "Project", DimProject[Project], "ProjectKey", DimProject[ProjectKey], "Ordre", DimProject[RegisterOrder] )
-

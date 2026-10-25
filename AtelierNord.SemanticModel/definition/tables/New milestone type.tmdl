@@ -23,4 +23,3 @@ table 'New milestone type'
 	partition 'New milestone type' = calculated
 		mode: import
 		source = DATATABLE ( "Type", STRING, "Ordre", INTEGER, { { "Key milestone", 1 }, { "Checkpoint", 2 } } )
-

@@ -30,4 +30,3 @@ table DimTeam
 				    Typed
 
 	annotation PBI_ResultType = Table
-

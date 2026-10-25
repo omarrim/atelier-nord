@@ -34,4 +34,3 @@ table 'Month nav'
 		source =
 				SELECTCOLUMNS ( GENERATESERIES ( 0, 8 ), "Month", FORMAT ( EDATE ( DATE ( 2026, 10, 1 ), [Value] ), "mmmm yyyy" ),
 				    "MonthStart", EDATE ( DATE ( 2026, 10, 1 ), [Value] ), "Ordre", [Value] )
-

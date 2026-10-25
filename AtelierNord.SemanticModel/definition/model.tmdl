@@ -41,7 +41,5 @@ ref table 'New milestone type'
 ref table 'Render image'
 ref table 'Thumb image'
 ref table 'Avatar image'
+ref table 'Background image'
 ref table _Measures
-
-ref cultureInfo en-US
-

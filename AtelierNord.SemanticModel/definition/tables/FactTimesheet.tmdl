@@ -59,4 +59,3 @@ table FactTimesheet
 				    Typed
 
 	annotation PBI_ResultType = Table
-

@@ -69,4 +69,3 @@ table FactWorkPackage
 				    Typed
 
 	annotation PBI_ResultType = Table
-

@@ -58,4 +58,3 @@ table BridgeProjectPerson
 				    Typed
 
 	annotation PBI_ResultType = Table
-

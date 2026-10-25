@@ -23,4 +23,3 @@ table 'Finance period'
 	partition 'Finance period' = calculated
 		mode: import
 		source = DATATABLE ( "Period", STRING, "Ordre", INTEGER, { { "Month", 1 }, { "Quarter", 2 }, { "Year", 3 } } )
-

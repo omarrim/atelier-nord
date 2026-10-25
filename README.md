@@ -1,6 +1,6 @@
 # Atelier Nord, a free Power BI report for an architecture studio
 
-Atelier Nord is a fictional architecture studio in Lyon, running 12 projects across France. This is its full Power BI project: four pages (Overview, Projects, Planning, Finance), a project page you open from any project, a project card on hover, notifications, a New milestone panel, and Light and Dark mode. 136 visuals, 191 DAX measures and not a single custom visual: nothing to install.
+Atelier Nord is a fictional architecture studio in Lyon, running 12 projects across France. This is its full Power BI project: four pages (Overview, Projects, Planning, Finance), a project page you open from any project, a project card on hover, notifications, a New milestone panel, and Light and Dark mode. 136 visuals, 192 DAX measures and not a single custom visual: nothing to install.
 
 Made by Omar Arrim, founder of ChartCraft: https://chartcraft.io
 
@@ -33,7 +33,7 @@ In Desktop, hold **Ctrl** to click the report buttons (menu, Open project, Grid 
 |---|---|
 | `AtelierNord.pbip` | The file to open |
 | `AtelierNord.Report/` | The report, in PBIR format (one JSON file per visual), with its theme and bookmarks |
-| `AtelierNord.SemanticModel/` | The model, in TMDL format: 30 tables, 24 relationships, 191 measures |
+| `AtelierNord.SemanticModel/` | The model, in TMDL format: 31 tables, 24 relationships, 192 measures |
 | `data/` | 17 Parquet files: 19 projects (12 in progress), 24 people, 39,328 timesheet lines, 249 invoices, 74 milestones and the planned hours of every phase |
 
 ## Good to know
@@ -60,7 +60,7 @@ A few parts come from third parties and keep their own licences, listed in [THIR
 
 # Atelier Nord, un rapport Power BI gratuit pour un cabinet d'architecture
 
-Atelier Nord est un cabinet d'architecture fictif installé à Lyon, avec 12 projets en cours partout en France. Voici son projet Power BI complet : quatre pages (Overview, Projects, Planning, Finance), une page projet qui s'ouvre depuis n'importe quel projet, une fiche au survol, des notifications, un panneau New milestone, un mode clair et un mode sombre. 136 visuels, 191 mesures DAX et aucun visuel personnalisé : rien à installer.
+Atelier Nord est un cabinet d'architecture fictif installé à Lyon, avec 12 projets en cours partout en France. Voici son projet Power BI complet : quatre pages (Overview, Projects, Planning, Finance), une page projet qui s'ouvre depuis n'importe quel projet, une fiche au survol, des notifications, un panneau New milestone, un mode clair et un mode sombre. 136 visuels, 192 mesures DAX et aucun visuel personnalisé : rien à installer.
 
 ## L'ouvrir en 3 étapes
 

@@ -94,4 +94,3 @@ relationship 7d6bb0a0-ff64-52ba-9ab4-5af2cf687228
 	crossFilteringBehavior: bothDirections
 	fromColumn: 'Phase filter'.ProjectKey
 	toColumn: DimProject.ProjectKey
-

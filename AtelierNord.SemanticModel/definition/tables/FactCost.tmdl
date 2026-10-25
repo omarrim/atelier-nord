@@ -41,4 +41,3 @@ table FactCost
 				    Typed
 
 	annotation PBI_ResultType = Table
-

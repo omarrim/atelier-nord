@@ -37,4 +37,3 @@ table 'Phase filter'
 				RETURN UNION (
 				    SELECTCOLUMNS ( _a, "Chip", "All projects", "Ordre", 0, "ProjectKey", DimProject[ProjectKey] ),
 				    SELECTCOLUMNS ( _a, "Chip", DimProject[Phase], "Ordre", SWITCH ( DimProject[Phase], "Design", 1, "Permit", 2, 3 ), "ProjectKey", DimProject[ProjectKey] ) )
-

@@ -224,4 +224,3 @@ table DimProject
 				    Typed
 
 	annotation PBI_ResultType = Table
-

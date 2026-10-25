@@ -5,11 +5,10 @@
   "displayOption": "FitToPage",
   "height": 270,
   "width": 360,
+  "type": "Tooltip",
+  "visibility": "HiddenInViewMode",
   "pageBinding": {
     "name": "7abce772156b5164b841",
-    "type": "Tooltip",
-    "parameters": []
-  },
-  "visibility": "HiddenInViewMode",
-  "type": "Tooltip"
+    "type": "Tooltip"
+  }
 }
