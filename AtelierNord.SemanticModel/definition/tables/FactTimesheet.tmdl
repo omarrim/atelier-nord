@@ -1,0 +1,62 @@
+table FactTimesheet
+	lineageTag: 36ea0076-40d4-55c2-bd76-194dd1df5643
+
+	column Date
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: 701e5da7-4532-5649-8a62-20537810437a
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column PersonKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 1687dd2c-2afe-5710-873d-0c37b0ac6327
+		summarizeBy: none
+		sourceColumn: PersonKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProjectKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: bef5234b-c5d7-536c-94b6-f1c5786b27c0
+		summarizeBy: none
+		sourceColumn: ProjectKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Phase
+		dataType: string
+		lineageTag: cfa2f08f-92a2-5058-8e6b-54a0425cf21e
+		summarizeBy: none
+		sourceColumn: Phase
+
+		annotation SummarizationSetBy = Automatic
+
+	column Hours
+		dataType: double
+		formatString: #,0.00
+		lineageTag: b79d1e99-45ad-54ba-b5d4-50f38acfb4ca
+		summarizeBy: none
+		sourceColumn: Hours
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactTimesheet = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DossierDonnees & "FactTimesheet.parquet")),
+				    Typed = Table.TransformColumnTypes(Source, {{"Date", type date}, {"PersonKey", Int64.Type}, {"ProjectKey", Int64.Type}, {"Phase", type text}, {"Hours", type number}})
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,40 @@
+table 'Phase filter'
+	lineageTag: 6b06fbf6-5c1b-5d29-a0c8-c88874711555
+
+	column Chip
+		dataType: string
+		lineageTag: 2504d678-2113-5ebc-9763-d0b8066e52b6
+		summarizeBy: none
+		sourceColumn: [Chip]
+		sortByColumn: Ordre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ordre
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 9411e50a-9172-5d14-9440-cd293b8580db
+		summarizeBy: none
+		sourceColumn: [Ordre]
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProjectKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: b5944b7a-8844-578f-ab9b-3b5024c32e06
+		summarizeBy: none
+		sourceColumn: [ProjectKey]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Phase filter' = calculated
+		mode: import
+		source =
+				VAR _a = FILTER ( DimProject, DimProject[Status] <> "Completed" )
+				RETURN UNION (
+				    SELECTCOLUMNS ( _a, "Chip", "All projects", "Ordre", 0, "ProjectKey", DimProject[ProjectKey] ),
+				    SELECTCOLUMNS ( _a, "Chip", DimProject[Phase], "Ordre", SWITCH ( DimProject[Phase], "Design", 1, "Permit", 2, 3 ), "ProjectKey", DimProject[ProjectKey] ) )
+

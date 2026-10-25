@@ -1,0 +1,75 @@
+table DimPerson
+	lineageTag: a622d680-7ebe-565b-b67b-97b1f0f22117
+
+	column PersonKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 6b5ba488-ab02-5f93-951d-b2b5f73e6bec
+		summarizeBy: none
+		sourceColumn: PersonKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Person
+		dataType: string
+		lineageTag: a10383fa-3d58-53ab-a5fb-c0afad5ac210
+		summarizeBy: none
+		sourceColumn: Person
+
+		annotation SummarizationSetBy = Automatic
+
+	column Role
+		dataType: string
+		lineageTag: fbea230d-19b4-5991-af48-59442f02388a
+		summarizeBy: none
+		sourceColumn: Role
+
+		annotation SummarizationSetBy = Automatic
+
+	column Team
+		dataType: string
+		lineageTag: 68a53a16-6ae1-569e-a3e7-0e816aeb8fd5
+		summarizeBy: none
+		sourceColumn: Team
+
+		annotation SummarizationSetBy = Automatic
+
+	column Portrait
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: dc139dd4-570b-5d26-808f-549da362fbbf
+		summarizeBy: none
+		sourceColumn: Portrait
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsStaff
+		dataType: boolean
+		isHidden
+		lineageTag: 1637ae58-37ec-53fc-a701-6c36778a9c3c
+		summarizeBy: none
+		sourceColumn: IsStaff
+
+		annotation SummarizationSetBy = Automatic
+
+	column FirstName
+		dataType: string
+		lineageTag: 50986e68-23f4-50b9-a9e8-01349047d8b3
+		summarizeBy: none
+		sourceColumn: FirstName
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimPerson = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DossierDonnees & "DimPerson.parquet")),
+				    Typed = Table.TransformColumnTypes(Source, {{"PersonKey", Int64.Type}, {"Person", type text}, {"Role", type text}, {"Team", type text}, {"Portrait", Int64.Type}, {"IsStaff", type logical}, {"FirstName", type text}})
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,44 @@
+table FactCapacity
+	lineageTag: 79538fee-8d81-511c-9640-c327ecab8497
+
+	column PersonKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: e5157b6e-19ba-5608-b269-b605e5eba888
+		summarizeBy: none
+		sourceColumn: PersonKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: dateTime
+		formatString: mmm yyyy
+		lineageTag: ce08368e-8aad-59f5-b4ae-7a913c140d0d
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Hours
+		dataType: double
+		formatString: #,0.0
+		lineageTag: 51dd299c-f722-52eb-8f05-b07f153e2fd0
+		summarizeBy: none
+		sourceColumn: Hours
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactCapacity = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DossierDonnees & "FactCapacity.parquet")),
+				    Typed = Table.TransformColumnTypes(Source, {{"PersonKey", Int64.Type}, {"Month", type date}, {"Hours", type number}})
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

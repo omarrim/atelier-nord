@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "AtelierNord"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "18c8b6e2-c6da-5e1d-b8fa-104fe2130840"
+  }
+}

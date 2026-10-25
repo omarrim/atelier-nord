@@ -1,0 +1,33 @@
+table DimPhase
+	lineageTag: 14774c4a-c000-5b90-9d4f-5abccefac01e
+
+	column Phase
+		dataType: string
+		lineageTag: e5b748d8-3012-5d3a-83b5-ec0e1a10a14a
+		summarizeBy: none
+		sourceColumn: Phase
+		sortByColumn: PhaseOrder
+
+		annotation SummarizationSetBy = Automatic
+
+	column PhaseOrder
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: c9b54662-e737-58e6-aceb-286b3ca91bad
+		summarizeBy: none
+		sourceColumn: PhaseOrder
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimPhase = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DossierDonnees & "DimPhase.parquet")),
+				    Typed = Table.TransformColumnTypes(Source, {{"Phase", type text}, {"PhaseOrder", Int64.Type}})
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

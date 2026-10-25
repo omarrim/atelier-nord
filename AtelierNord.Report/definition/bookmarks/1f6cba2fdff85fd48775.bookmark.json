@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "Timeline view",
+  "name": "1f6cba2fdff85fd48775",
+  "options": {
+    "applyOnlyToTargetVisuals": true,
+    "targetVisualNames": [
+      "0cad6605ae615c13aff7",
+      "dd208a50d34c5149986b",
+      "af9073e8a83657abb3a7",
+      "e9b4319cdda15c2eac66"
+    ],
+    "suppressData": true
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "a51bb579669d51c49d1f",
+    "sections": {
+      "a51bb579669d51c49d1f": {
+        "visualContainers": {
+          "0cad6605ae615c13aff7": {
+            "singleVisual": {
+              "visualType": "cardVisual",
+              "objects": {}
+            }
+          },
+          "dd208a50d34c5149986b": {
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {}
+            }
+          },
+          "af9073e8a83657abb3a7": {
+            "singleVisual": {
+              "visualType": "cardVisual",
+              "objects": {}
+            }
+          },
+          "e9b4319cdda15c2eac66": {
+            "singleVisual": {
+              "visualType": "cardVisual",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          }
+        }
+      }
+    },
+    "objects": {}
+  }
+}

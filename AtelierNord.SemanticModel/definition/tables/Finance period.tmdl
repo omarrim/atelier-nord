@@ -1,0 +1,26 @@
+table 'Finance period'
+	lineageTag: 46eadb45-4a0a-5e9c-94bc-e72e1c07a834
+
+	column Period
+		dataType: string
+		lineageTag: b8df9c8e-5089-5196-ae09-f496d0d952ab
+		summarizeBy: none
+		sourceColumn: [Period]
+		sortByColumn: Ordre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ordre
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: af6002f6-14cb-524d-b722-4f08ac15c296
+		summarizeBy: none
+		sourceColumn: [Ordre]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Finance period' = calculated
+		mode: import
+		source = DATATABLE ( "Period", STRING, "Ordre", INTEGER, { { "Month", 1 }, { "Quarter", 2 }, { "Year", 3 } } )
+

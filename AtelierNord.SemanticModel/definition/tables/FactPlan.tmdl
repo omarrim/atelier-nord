@@ -1,0 +1,52 @@
+table FactPlan
+	lineageTag: b895fa88-2054-5f11-9c91-4c7468e6638f
+
+	column ProjectKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 1a07bd8a-ab14-5b15-90ad-b953ae81fbb3
+		summarizeBy: none
+		sourceColumn: ProjectKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Phase
+		dataType: string
+		lineageTag: da404448-140e-5c65-bb29-39994fa47582
+		summarizeBy: none
+		sourceColumn: Phase
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekStart
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: 2bb10618-c6c9-5b20-86a1-1974bdffa487
+		summarizeBy: none
+		sourceColumn: WeekStart
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column PlannedHours
+		dataType: double
+		formatString: #,0.0
+		lineageTag: dcd7a4c0-4fac-5aab-8bd9-6721e47d4fad
+		summarizeBy: none
+		sourceColumn: PlannedHours
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactPlan = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DossierDonnees & "FactPlan.parquet")),
+				    Typed = Table.TransformColumnTypes(Source, {{"ProjectKey", Int64.Type}, {"Phase", type text}, {"WeekStart", type date}, {"PlannedHours", type number}})
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

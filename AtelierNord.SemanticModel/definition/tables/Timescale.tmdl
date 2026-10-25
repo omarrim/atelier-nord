@@ -1,0 +1,26 @@
+table Timescale
+	lineageTag: bd8b84d1-b48d-578e-aa89-16b1498f1045
+
+	column Timescale
+		dataType: string
+		lineageTag: e2a9a19e-b014-5b0d-ba68-8e9809d5a419
+		summarizeBy: none
+		sourceColumn: [Timescale]
+		sortByColumn: Ordre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ordre
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: bed5e71c-873d-5c0b-887a-b95bfedd8987
+		summarizeBy: none
+		sourceColumn: [Ordre]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Timescale = calculated
+		mode: import
+		source = DATATABLE ( "Timescale", STRING, "Ordre", INTEGER, { { "Week", 1 }, { "Month", 2 }, { "Quarter", 3 }, { "Year", 4 } } )
+

@@ -1,0 +1,26 @@
+table 'New milestone type'
+	lineageTag: 6e403909-181b-5b70-9477-1b4239d4aada
+
+	column Type
+		dataType: string
+		lineageTag: 7d01050c-80cb-5b11-8e6f-8b3771ee6fc1
+		summarizeBy: none
+		sourceColumn: [Type]
+		sortByColumn: Ordre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ordre
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: c696bd27-ad1f-5153-bd1d-71f2cba952db
+		summarizeBy: none
+		sourceColumn: [Ordre]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'New milestone type' = calculated
+		mode: import
+		source = DATATABLE ( "Type", STRING, "Ordre", INTEGER, { { "Key milestone", 1 }, { "Checkpoint", 2 } } )
+

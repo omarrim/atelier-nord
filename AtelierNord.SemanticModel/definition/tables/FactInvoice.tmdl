@@ -1,0 +1,74 @@
+table FactInvoice
+	lineageTag: f20afe14-c4cb-58a2-8900-38b094a25622
+
+	column Invoice
+		dataType: string
+		lineageTag: 7b4ae57c-4005-5981-8c48-70174726e006
+		summarizeBy: none
+		sourceColumn: Invoice
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProjectKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 76a83c97-641b-551d-89ab-d3c1e67b57b8
+		summarizeBy: none
+		sourceColumn: ProjectKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column IssueDate
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: 4b55cd28-0888-5603-8606-c3c2fd5cc52d
+		summarizeBy: none
+		sourceColumn: IssueDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DueDate
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: c11cb8f4-7201-5200-aa5b-c27e2bb293cd
+		summarizeBy: none
+		sourceColumn: DueDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Amount
+		dataType: double
+		formatString: #,0
+		lineageTag: 62f862fd-2585-527e-bffa-b2853ddf9416
+		summarizeBy: none
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column PaidDate
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: 64437f34-8c16-5252-a42a-558495b46dbe
+		summarizeBy: none
+		sourceColumn: PaidDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition FactInvoice = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DossierDonnees & "FactInvoice.parquet")),
+				    Typed = Table.TransformColumnTypes(Source, {{"Invoice", type text}, {"ProjectKey", Int64.Type}, {"IssueDate", type date}, {"DueDate", type date}, {"Amount", type number}, {"PaidDate", type date}})
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

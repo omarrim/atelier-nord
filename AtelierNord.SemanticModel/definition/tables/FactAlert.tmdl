@@ -1,0 +1,72 @@
+table FactAlert
+	lineageTag: c69972c2-a273-5d77-88dd-e4dbe4f29de3
+
+	column AlertKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 927e2228-dfab-576a-bf77-6df79146b3ec
+		summarizeBy: none
+		sourceColumn: AlertKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProjectKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 44ceb992-a064-59a0-a004-ac6533fa6a72
+		summarizeBy: none
+		sourceColumn: ProjectKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Raised
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: cd5a9e81-17b8-5763-9982-bc2b29b8cf72
+		summarizeBy: none
+		sourceColumn: Raised
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Date
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: 8f1d72d7-b874-5fd3-a012-428460124a3d
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Alert
+		dataType: string
+		lineageTag: 8a53c9b2-c354-5f9a-ab0e-e0ef35f796a0
+		summarizeBy: none
+		sourceColumn: Alert
+
+		annotation SummarizationSetBy = Automatic
+
+	column Action
+		dataType: string
+		lineageTag: 1c162b65-fb8e-5c8c-b8bd-ecf06b021def
+		summarizeBy: none
+		sourceColumn: Action
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactAlert = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DossierDonnees & "FactAlert.parquet")),
+				    Typed = Table.TransformColumnTypes(Source, {{"AlertKey", Int64.Type}, {"ProjectKey", Int64.Type}, {"Raised", type date}, {"Date", type date}, {"Alert", type text}, {"Action", type text}})
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,38 @@
+table 'New milestone project'
+	lineageTag: 90b20f99-d72c-5ad9-8fd5-566fb447f11c
+
+	column Project
+		dataType: string
+		lineageTag: b460d130-bf59-58ad-9f9b-a054599461b3
+		summarizeBy: none
+		sourceColumn: [Project]
+		sortByColumn: Ordre
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProjectKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: d9719c42-597b-5a45-a243-a34141cb376b
+		summarizeBy: none
+		sourceColumn: [ProjectKey]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ordre
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: d54cd152-d16d-5792-bcde-d6ab15de61a1
+		summarizeBy: none
+		sourceColumn: [Ordre]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'New milestone project' = calculated
+		mode: import
+		source =
+				SELECTCOLUMNS ( FILTER ( DimProject, DimProject[Status] <> "Completed" ),
+				    "Project", DimProject[Project], "ProjectKey", DimProject[ProjectKey], "Ordre", DimProject[RegisterOrder] )
+

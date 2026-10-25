@@ -1,0 +1,26 @@
+table Theme
+	lineageTag: ee584df4-af74-5dfa-b32b-915e9207c88d
+
+	column Theme
+		dataType: string
+		lineageTag: 8a70e416-7ae7-54c4-b09e-7c5a9a1c9ffb
+		summarizeBy: none
+		sourceColumn: [Theme]
+		sortByColumn: Ordre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ordre
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 0d7b41aa-6b64-5a21-944a-85d4ad0457a6
+		summarizeBy: none
+		sourceColumn: [Ordre]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Theme = calculated
+		mode: import
+		source = DATATABLE ( "Theme", STRING, "Ordre", INTEGER, { { "Light", 1 }, { "Dark", 2 } } )
+

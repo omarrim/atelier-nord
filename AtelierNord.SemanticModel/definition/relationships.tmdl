@@ -1,0 +1,97 @@
+relationship 05a22176-238e-5e26-80ad-71d25562d24b
+	fromColumn: FactTimesheet.Date
+	toColumn: DimDate.Date
+
+relationship a3a43fe2-b2a8-51b2-86b1-74fb752918c8
+	fromColumn: FactTimesheet.ProjectKey
+	toColumn: DimProject.ProjectKey
+
+relationship 6859766f-4054-5c9a-9b08-e97fbda0388d
+	fromColumn: FactTimesheet.PersonKey
+	toColumn: DimPerson.PersonKey
+
+relationship b26ec893-18e1-5fcc-8601-1303bdc08f8b
+	fromColumn: FactCapacity.PersonKey
+	toColumn: DimPerson.PersonKey
+
+relationship 1ae5ebb7-bc41-56d5-bf6d-3a419b4b8a42
+	fromColumn: FactCapacity.Month
+	toColumn: DimDate.Date
+
+relationship 7d9878b6-0b2a-576a-bd1e-f6a2dd3640bc
+	fromColumn: FactPlan.ProjectKey
+	toColumn: DimProject.ProjectKey
+
+relationship 2fe4b662-d51d-5106-a29f-8ff576ed0dec
+	fromColumn: FactPlan.WeekStart
+	toColumn: DimDate.Date
+
+relationship 5a68571f-062e-5c22-8679-97a5c3971dd8
+	fromColumn: FactInvoice.ProjectKey
+	toColumn: DimProject.ProjectKey
+
+relationship 07bf2532-260a-521f-873d-fd78be64c0b2
+	fromColumn: FactInvoice.IssueDate
+	toColumn: DimDate.Date
+
+relationship 2cef6219-050f-5973-afdc-aab4bc471e12
+	fromColumn: FactCost.ProjectKey
+	toColumn: DimProject.ProjectKey
+
+relationship f4cf32dc-07ac-5d99-b7b6-66a5f2fe5a16
+	fromColumn: FactCost.Month
+	toColumn: DimDate.Date
+
+relationship 416ba788-ce36-50d6-b9ce-471aaeddf41c
+	fromColumn: FactMilestone.ProjectKey
+	toColumn: DimProject.ProjectKey
+
+relationship bb70f324-f917-5f84-ae3d-1889fb8e5f4b
+	fromColumn: FactMilestone.Date
+	toColumn: DimDate.Date
+
+relationship 0f532fb3-20e1-5785-a382-e90faf7df138
+	fromColumn: FactTask.ProjectKey
+	toColumn: DimProject.ProjectKey
+
+relationship cca46912-02e3-5f1f-a06b-dc79a5ca27fb
+	fromColumn: FactTask.PersonKey
+	toColumn: DimPerson.PersonKey
+
+relationship 30d28730-d638-5d5e-99ef-8164072fca3b
+	fromColumn: FactMeeting.ProjectKey
+	toColumn: DimProject.ProjectKey
+
+relationship d6b88146-8ba7-5c91-aab1-a601dc163a2d
+	fromColumn: FactMeeting.Date
+	toColumn: DimDate.Date
+
+relationship 71f1e056-480e-576c-88fe-29684870ad5f
+	fromColumn: FactAlert.ProjectKey
+	toColumn: DimProject.ProjectKey
+
+relationship 6c67028b-551b-5f6a-a930-4f6349b3022b
+	fromColumn: FactWorkPackage.ProjectKey
+	toColumn: DimProject.ProjectKey
+
+relationship c8058df3-23f6-5d4d-8228-9a8d7b60cf32
+	fromColumn: FactProjectPhase.ProjectKey
+	toColumn: DimProject.ProjectKey
+
+relationship b7a254c7-561e-5f0b-ad8b-6ac951fe9ba8
+	fromColumn: BridgeProjectPerson.ProjectKey
+	toColumn: DimProject.ProjectKey
+
+relationship 1b6501e5-14e1-5232-ae63-b320d5834e34
+	fromColumn: BridgeProjectPerson.PersonKey
+	toColumn: DimPerson.PersonKey
+
+relationship ff9414e0-cf89-552b-8c51-afdf1bf09f5c
+	fromColumn: DimPerson.Team
+	toColumn: DimTeam.Team
+
+relationship 7d6bb0a0-ff64-52ba-9ab4-5af2cf687228
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Phase filter'.ProjectKey
+	toColumn: DimProject.ProjectKey
+

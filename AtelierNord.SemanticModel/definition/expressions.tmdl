@@ -1,0 +1,7 @@
+expression DossierDonnees = "C:\AtelierNord\data\" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 7a9aa41c-84f7-5714-b5e2-179e62999981
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+

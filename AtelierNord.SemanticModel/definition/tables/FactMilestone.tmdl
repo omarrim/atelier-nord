@@ -1,0 +1,61 @@
+table FactMilestone
+	lineageTag: 4d22bb21-a3f8-59ea-9daa-983a7b822ec7
+
+	column MilestoneKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 864802ce-386d-548a-9f69-fddd372f80c7
+		summarizeBy: none
+		sourceColumn: MilestoneKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProjectKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 2db26196-d5e6-5cc1-b6de-ea3c5462e0b8
+		summarizeBy: none
+		sourceColumn: ProjectKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: 5f7d9976-106f-5d67-86cd-cbe33ce1ecde
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Milestone
+		dataType: string
+		lineageTag: eb436208-1376-5b85-93e4-dac59df0e79a
+		summarizeBy: none
+		sourceColumn: Milestone
+
+		annotation SummarizationSetBy = Automatic
+
+	column Kind
+		dataType: string
+		lineageTag: f8183e82-aa07-54ba-bd32-a4447a183ed5
+		summarizeBy: none
+		sourceColumn: Kind
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactMilestone = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DossierDonnees & "FactMilestone.parquet")),
+				    Typed = Table.TransformColumnTypes(Source, {{"MilestoneKey", Int64.Type}, {"ProjectKey", Int64.Type}, {"Date", type date}, {"Milestone", type text}, {"Kind", type text}})
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

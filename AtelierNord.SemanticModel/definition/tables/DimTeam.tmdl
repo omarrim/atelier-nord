@@ -1,0 +1,33 @@
+table DimTeam
+	lineageTag: 79e8d6e5-1de1-5b6a-8bc2-6bdfa4835a3a
+
+	column Team
+		dataType: string
+		lineageTag: 1517f971-b1c6-530c-8bdf-a71ca52ba14b
+		summarizeBy: none
+		sourceColumn: Team
+		sortByColumn: TeamOrder
+
+		annotation SummarizationSetBy = Automatic
+
+	column TeamOrder
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 45adaed9-d1a5-5ba7-ac25-290b517cca25
+		summarizeBy: none
+		sourceColumn: TeamOrder
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimTeam = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DossierDonnees & "DimTeam.parquet")),
+				    Typed = Table.TransformColumnTypes(Source, {{"Team", type text}, {"TeamOrder", Int64.Type}})
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

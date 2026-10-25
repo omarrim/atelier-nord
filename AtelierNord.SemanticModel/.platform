@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "AtelierNord"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "924cd02a-0d46-5709-ba63-8cb3597b3031"
+  }
+}

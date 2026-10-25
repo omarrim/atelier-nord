@@ -1,0 +1,72 @@
+table FactWorkPackage
+	lineageTag: 2b87bc3b-f83e-50f0-ad88-74ee5d41dd76
+
+	column ProjectKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f9d3d6eb-1df5-5686-9efa-c4973c720163
+		summarizeBy: none
+		sourceColumn: ProjectKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column PackageOrder
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: a57767fd-0635-5cb4-8210-b59814103613
+		summarizeBy: none
+		sourceColumn: PackageOrder
+
+		annotation SummarizationSetBy = Automatic
+
+	column Phase
+		dataType: string
+		lineageTag: 9814114e-31d0-55fc-b152-4703ea5ff84b
+		summarizeBy: none
+		sourceColumn: Phase
+
+		annotation SummarizationSetBy = Automatic
+
+	column Package
+		dataType: string
+		lineageTag: b5671d3d-0628-536f-927c-2f3a23b0c47c
+		summarizeBy: none
+		sourceColumn: Package
+
+		annotation SummarizationSetBy = Automatic
+
+	column Start
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: 9afc5dfb-db74-5b7b-adbf-8e0f2e4da05b
+		summarizeBy: none
+		sourceColumn: Start
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column End
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: cb3b7b34-346b-532c-83d9-57ed80361914
+		summarizeBy: none
+		sourceColumn: End
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition FactWorkPackage = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DossierDonnees & "FactWorkPackage.parquet")),
+				    Typed = Table.TransformColumnTypes(Source, {{"ProjectKey", Int64.Type}, {"PackageOrder", Int64.Type}, {"Phase", type text}, {"Package", type text}, {"Start", type date}, {"End", type date}})
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,89 @@
+table FactMeeting
+	lineageTag: 18ff04a2-84b5-501e-9f20-81c943c5fee3
+
+	column MeetingKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: c1461070-e4cb-5e94-b6cb-c75a27a1bff6
+		summarizeBy: none
+		sourceColumn: MeetingKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: 851c729d-e959-5f0e-8a69-e0c8d877f568
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Time
+		dataType: string
+		lineageTag: 9757e259-ca98-5d64-a3f4-faa36029809b
+		summarizeBy: none
+		sourceColumn: Time
+
+		annotation SummarizationSetBy = Automatic
+
+	column Meeting
+		dataType: string
+		lineageTag: 76a52f17-f759-5555-b90a-197e18cdd0e2
+		summarizeBy: none
+		sourceColumn: Meeting
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProjectKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 060ff6bf-a8a2-5cfc-956e-46e95c243450
+		summarizeBy: none
+		sourceColumn: ProjectKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Kind
+		dataType: string
+		lineageTag: b11b16f7-950f-5dab-a912-0fa6162022fe
+		summarizeBy: none
+		sourceColumn: Kind
+
+		annotation SummarizationSetBy = Automatic
+
+	column Person1
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 37c8768b-f706-5564-8b5b-4384911dea6d
+		summarizeBy: none
+		sourceColumn: Person1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Person2
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: eb2f3fb8-0352-5bc3-8026-d2c94fb801fc
+		summarizeBy: none
+		sourceColumn: Person2
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactMeeting = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DossierDonnees & "FactMeeting.parquet")),
+				    Typed = Table.TransformColumnTypes(Source, {{"MeetingKey", Int64.Type}, {"Date", type date}, {"Time", type text}, {"Meeting", type text}, {"ProjectKey", Int64.Type}, {"Kind", type text}, {"Person1", Int64.Type}, {"Person2", Int64.Type}})
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

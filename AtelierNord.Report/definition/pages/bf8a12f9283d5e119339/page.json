@@ -1,0 +1,120 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "bf8a12f9283d5e119339",
+  "displayName": "Finance",
+  "displayOption": "FitToPage",
+  "height": 1080,
+  "width": 1440,
+  "visualInteractions": [
+    {
+      "source": "5ea59dc031475e6aa325",
+      "target": "51acb78b5279521e9bd1",
+      "type": "NoFilter"
+    },
+    {
+      "source": "5ea59dc031475e6aa325",
+      "target": "b24a7442a241570d821c",
+      "type": "NoFilter"
+    },
+    {
+      "source": "5ea59dc031475e6aa325",
+      "target": "0da4bb57c6425bc7b272",
+      "type": "NoFilter"
+    },
+    {
+      "source": "5ea59dc031475e6aa325",
+      "target": "114edf27d3235250adf9",
+      "type": "NoFilter"
+    },
+    {
+      "source": "5ea59dc031475e6aa325",
+      "target": "10078092627b5199b2e0",
+      "type": "NoFilter"
+    },
+    {
+      "source": "5ea59dc031475e6aa325",
+      "target": "841c638303f95bf5b037",
+      "type": "NoFilter"
+    },
+    {
+      "source": "5ea59dc031475e6aa325",
+      "target": "89170cff9b0e51e2b20f",
+      "type": "NoFilter"
+    },
+    {
+      "source": "5ea59dc031475e6aa325",
+      "target": "0956a85824fd54be93e4",
+      "type": "NoFilter"
+    },
+    {
+      "source": "841c638303f95bf5b037",
+      "target": "51acb78b5279521e9bd1",
+      "type": "NoFilter"
+    },
+    {
+      "source": "841c638303f95bf5b037",
+      "target": "b24a7442a241570d821c",
+      "type": "NoFilter"
+    },
+    {
+      "source": "841c638303f95bf5b037",
+      "target": "d355879d9a4b598d87c0",
+      "type": "NoFilter"
+    },
+    {
+      "source": "841c638303f95bf5b037",
+      "target": "0da4bb57c6425bc7b272",
+      "type": "NoFilter"
+    },
+    {
+      "source": "841c638303f95bf5b037",
+      "target": "114edf27d3235250adf9",
+      "type": "NoFilter"
+    },
+    {
+      "source": "841c638303f95bf5b037",
+      "target": "5ea59dc031475e6aa325",
+      "type": "NoFilter"
+    },
+    {
+      "source": "841c638303f95bf5b037",
+      "target": "10078092627b5199b2e0",
+      "type": "NoFilter"
+    },
+    {
+      "source": "841c638303f95bf5b037",
+      "target": "89170cff9b0e51e2b20f",
+      "type": "NoFilter"
+    },
+    {
+      "source": "841c638303f95bf5b037",
+      "target": "0956a85824fd54be93e4",
+      "type": "NoFilter"
+    },
+    {
+      "source": "0956a85824fd54be93e4",
+      "target": "51acb78b5279521e9bd1",
+      "type": "NoFilter"
+    },
+    {
+      "source": "0956a85824fd54be93e4",
+      "target": "b24a7442a241570d821c",
+      "type": "NoFilter"
+    },
+    {
+      "source": "0956a85824fd54be93e4",
+      "target": "0da4bb57c6425bc7b272",
+      "type": "NoFilter"
+    },
+    {
+      "source": "0956a85824fd54be93e4",
+      "target": "114edf27d3235250adf9",
+      "type": "NoFilter"
+    },
+    {
+      "source": "0956a85824fd54be93e4",
+      "target": "10078092627b5199b2e0",
+      "type": "NoFilter"
+    }
+  ]
+}

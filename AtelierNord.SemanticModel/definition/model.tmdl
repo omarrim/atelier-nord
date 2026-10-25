@@ -1,0 +1,47 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["DossierDonnees", "DimProject", "DimPerson", "DimTeam", "DimPhase", "DimDate", "BridgeProjectPerson", "FactWorkPackage", "FactProjectPhase", "FactMilestone", "FactAlert", "FactMeeting", "FactTask", "FactTimesheet", "FactCapacity", "FactPlan", "FactInvoice", "FactCost"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table DimProject
+ref table DimPerson
+ref table DimTeam
+ref table DimPhase
+ref table DimDate
+ref table BridgeProjectPerson
+ref table FactWorkPackage
+ref table FactProjectPhase
+ref table FactMilestone
+ref table FactAlert
+ref table FactMeeting
+ref table FactTask
+ref table FactTimesheet
+ref table FactCapacity
+ref table FactPlan
+ref table FactInvoice
+ref table FactCost
+ref table Theme
+ref table Timescale
+ref table 'Phase filter'
+ref table 'Month nav'
+ref table 'Finance period'
+ref table 'New milestone project'
+ref table 'New milestone name'
+ref table 'New milestone date'
+ref table 'New milestone type'
+ref table 'Render image'
+ref table 'Thumb image'
+ref table 'Avatar image'
+ref table _Measures
+
+ref cultureInfo en-US
+

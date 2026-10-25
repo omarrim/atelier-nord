@@ -1,0 +1,26 @@
+table 'New milestone name'
+	lineageTag: ac28e065-dd4c-519b-aab2-b51d77e13ff9
+
+	column Name
+		dataType: string
+		lineageTag: 41a32f9f-9ee4-5aaf-bf72-d5dda39eace0
+		summarizeBy: none
+		sourceColumn: [Name]
+		sortByColumn: Ordre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ordre
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 89e98744-285d-53ad-a49c-df240c5b11a0
+		summarizeBy: none
+		sourceColumn: [Ordre]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'New milestone name' = calculated
+		mode: import
+		source = DATATABLE ( "Name", STRING, "Ordre", INTEGER, { { "Client review", 1 }, { "Site inspection", 2 }, { "Permit decision", 3 }, { "Handover", 4 } } )
+

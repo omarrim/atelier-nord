@@ -1,0 +1,88 @@
+{
+  "name": "AtelierNord.json",
+  "dataColors": [
+    "#111111",
+    "#0E0E0E",
+    "#3A3A3A",
+    "#BDBDBD",
+    "#7A7A7A",
+    "#2F7D4F",
+    "#C2413B",
+    "#000000"
+  ],
+  "background": "#F1F1F0",
+  "foreground": "#111111",
+  "tableAccent": "#111111",
+  "good": "#2F7D4F",
+  "neutral": "#111111",
+  "bad": "#C2413B",
+  "maximum": "#111111",
+  "center": "#BDBDBD",
+  "minimum": "#F7F7F6",
+  "textClasses": {
+    "callout": {
+      "fontSize": 28,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#111111"
+    },
+    "title": {
+      "fontSize": 14,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#111111"
+    },
+    "header": {
+      "fontSize": 12,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#111111"
+    },
+    "label": {
+      "fontSize": 10,
+      "fontFace": "Segoe UI",
+      "color": "#7A7A7A"
+    }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [
+          {
+            "show": false
+          }
+        ],
+        "border": [
+          {
+            "show": false
+          }
+        ],
+        "visualHeader": [
+          {
+            "show": false
+          }
+        ],
+        "dropShadow": [
+          {
+            "show": false
+          }
+        ],
+        "title": [
+          {
+            "show": false
+          }
+        ]
+      }
+    },
+    "page": {
+      "*": {
+        "outspace": [
+          {
+            "color": {
+              "solid": {
+                "color": "#F1F1F0"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

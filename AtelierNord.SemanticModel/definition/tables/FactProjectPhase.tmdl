@@ -1,0 +1,54 @@
+table FactProjectPhase
+	lineageTag: 3a6596ea-972f-5994-9704-9de1d661f82a
+
+	column ProjectKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 752de6d4-0919-5eb2-935b-bb13477b6015
+		summarizeBy: none
+		sourceColumn: ProjectKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Phase
+		dataType: string
+		lineageTag: 7fc7784c-67e0-5bca-a7cf-14495de19c7e
+		summarizeBy: none
+		sourceColumn: Phase
+
+		annotation SummarizationSetBy = Automatic
+
+	column Start
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: 02200b75-1b63-5b65-8adc-14a683d4df41
+		summarizeBy: none
+		sourceColumn: Start
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column End
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: a64a27c5-00d7-547a-93ca-e5823270a3c9
+		summarizeBy: none
+		sourceColumn: End
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition FactProjectPhase = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DossierDonnees & "FactProjectPhase.parquet")),
+				    Typed = Table.TransformColumnTypes(Source, {{"ProjectKey", Int64.Type}, {"Phase", type text}, {"Start", type date}, {"End", type date}})
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

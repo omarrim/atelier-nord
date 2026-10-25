@@ -1,0 +1,26 @@
+table 'New milestone date'
+	lineageTag: e0722cc9-1369-530f-8156-6028c1b343be
+
+	column When
+		dataType: string
+		lineageTag: 941d5f34-9ee5-5d59-8d64-dc633740b5a2
+		summarizeBy: none
+		sourceColumn: [When]
+		sortByColumn: Ordre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ordre
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 6ea9280f-e0ff-5feb-b391-0f69131b3125
+		summarizeBy: none
+		sourceColumn: [Ordre]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'New milestone date' = calculated
+		mode: import
+		source = DATATABLE ( "When", STRING, "Ordre", INTEGER, { { "In 2 weeks", 1 }, { "End of package", 2 }, { "End of phase", 3 } } )
+

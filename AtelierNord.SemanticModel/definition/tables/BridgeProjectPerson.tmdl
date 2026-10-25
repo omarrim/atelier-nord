@@ -1,0 +1,61 @@
+table BridgeProjectPerson
+	lineageTag: 2c1bd1f9-a493-5761-baee-e5f5272712ce
+
+	column ProjectKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: bf592c88-1389-587f-8041-5c4e4642e51d
+		summarizeBy: none
+		sourceColumn: ProjectKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column PersonKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: a4d4ef91-e595-5b4b-81ea-20e7543bfe12
+		summarizeBy: none
+		sourceColumn: PersonKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProjectRole
+		dataType: string
+		lineageTag: de7f1ea1-05d5-5dc9-b978-84d1f82227a7
+		summarizeBy: none
+		sourceColumn: ProjectRole
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsStaff
+		dataType: boolean
+		isHidden
+		lineageTag: 243ee5e1-55b9-500b-917a-573112614a06
+		summarizeBy: none
+		sourceColumn: IsStaff
+
+		annotation SummarizationSetBy = Automatic
+
+	column MemberOrder
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: e8d1d019-7a8a-580b-abf1-7c2e802fb361
+		summarizeBy: none
+		sourceColumn: MemberOrder
+
+		annotation SummarizationSetBy = Automatic
+
+	partition BridgeProjectPerson = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DossierDonnees & "BridgeProjectPerson.parquet")),
+				    Typed = Table.TransformColumnTypes(Source, {{"ProjectKey", Int64.Type}, {"PersonKey", Int64.Type}, {"ProjectRole", type text}, {"IsStaff", type logical}, {"MemberOrder", Int64.Type}})
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

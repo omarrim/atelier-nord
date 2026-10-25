@@ -1,0 +1,412 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 2509.09736759908,
+            "y": 709.97363759192137
+          },
+          "nodeIndex": "_Measures",
+          "nodeLineageTag": "0f891c78-a8da-5419-8ebd-fd70bd78ab43",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 4046.58163455251,
+            "y": 795.97363759192137
+          },
+          "nodeIndex": "Avatar image",
+          "nodeLineageTag": "d1fac8d1-3093-5a92-892a-11629680b3b7",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 879.94356139243064,
+            "y": 464.07106927296161
+          },
+          "nodeIndex": "BridgeProjectPerson",
+          "nodeLineageTag": "2c1bd1f9-a493-5761-baee-e5f5272712ce",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 956.29040309119614,
+            "y": 1037.0000317485951
+          },
+          "nodeIndex": "DimDate",
+          "nodeLineageTag": "1527d8fd-972b-5a2f-b17f-7f555c6f9e0f",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 388.82045243019354,
+            "y": 1028.5117539075527
+          },
+          "nodeIndex": "DimPerson",
+          "nodeLineageTag": "a622d680-7ebe-565b-b67b-97b1f0f22117",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 4430.9527012908675,
+            "y": 795.97363759192137
+          },
+          "nodeIndex": "DimPhase",
+          "nodeLineageTag": "14774c4a-c000-5b90-9d4f-5abccefac01e",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1200.0825276521957,
+            "y": 334.94724343524786
+          },
+          "nodeIndex": "DimProject",
+          "nodeLineageTag": "98b1474b-fd93-5c94-8233-dc77633b6878",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1256.2072397677687,
+            "y": 48
+          },
+          "nodeIndex": "DimTeam",
+          "nodeLineageTag": "79e8d6e5-1de1-5b6a-8bc2-6bdfa4835a3a",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1540.9311642961568,
+            "y": 299.36184309001612
+          },
+          "nodeIndex": "FactAlert",
+          "nodeLineageTag": "c69972c2-a273-5d77-88dd-e4dbe4f29de3",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 1435.4589973428006
+          },
+          "nodeIndex": "FactCapacity",
+          "nodeLineageTag": "79538fee-8d81-511c-9640-c327ecab8497",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1470.4764715862698,
+            "y": 804.94524685985
+          },
+          "nodeIndex": "FactCost",
+          "nodeLineageTag": "cd4e509e-0d1c-5369-8855-8590c11870b3",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 870.21232055822065,
+            "y": 1495.947275183843
+          },
+          "nodeIndex": "FactInvoice",
+          "nodeLineageTag": "f20afe14-c4cb-58a2-8900-38b094a25622",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1770.3524525141738,
+            "y": 982.15616183042209
+          },
+          "nodeIndex": "FactMeeting",
+          "nodeLineageTag": "18ff04a2-84b5-501e-9f20-81c943c5fee3",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1077.5292281510219,
+            "y": 793.89448687049571
+          },
+          "nodeIndex": "FactMilestone",
+          "nodeLineageTag": "4d22bb21-a3f8-59ea-9daa-983a7b822ec7",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1377.4052090789257,
+            "y": 1055.5938261561687
+          },
+          "nodeIndex": "FactPlan",
+          "nodeLineageTag": "b895fa88-2054-5f11-9c91-4c7468e6638f",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 900.9135644454251,
+            "y": 0
+          },
+          "nodeIndex": "FactProjectPhase",
+          "nodeLineageTag": "3a6596ea-972f-5994-9704-9de1d661f82a",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 486.99631795718278,
+            "y": 350.813064219846
+          },
+          "nodeIndex": "FactTask",
+          "nodeLineageTag": "ae02c545-eae2-5cc3-ba04-13a9b702b2fe",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 684.58198471577407,
+            "y": 669.56451047230485
+          },
+          "nodeIndex": "FactTimesheet",
+          "nodeLineageTag": "36ea0076-40d4-55c2-bd76-194dd1df5643",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2124.7263008607224,
+            "y": 599.20891839517424
+          },
+          "nodeIndex": "FactWorkPackage",
+          "nodeLineageTag": "2b87bc3b-f83e-50f0-ad88-74ee5d41dd76",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 4815.323768029225,
+            "y": 795.97363759192137
+          },
+          "nodeIndex": "Finance period",
+          "nodeLineageTag": "46eadb45-4a0a-5e9c-94bc-e72e1c07a834",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2893.4684343374374,
+            "y": 783.97363759192137
+          },
+          "nodeIndex": "Month nav",
+          "nodeLineageTag": "6a4c04db-7aaa-51a5-af37-1df19db625d8",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 5199.6948347675825,
+            "y": 795.97363759192137
+          },
+          "nodeIndex": "New milestone date",
+          "nodeLineageTag": "e0722cc9-1369-530f-8156-6028c1b343be",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 5584.06590150594,
+            "y": 795.97363759192137
+          },
+          "nodeIndex": "New milestone name",
+          "nodeLineageTag": "ac28e065-dd4c-519b-aab2-b51d77e13ff9",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3277.8395010757949,
+            "y": 783.97363759192137
+          },
+          "nodeIndex": "New milestone project",
+          "nodeLineageTag": "90b20f99-d72c-5ad9-8fd5-566fb447f11c",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 5968.4369682442975,
+            "y": 795.97363759192137
+          },
+          "nodeIndex": "New milestone type",
+          "nodeLineageTag": "6e403909-181b-5b70-9477-1b4239d4aada",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1731.7790574254748,
+            "y": 566.24831065340072
+          },
+          "nodeIndex": "Phase filter",
+          "nodeLineageTag": "6b06fbf6-5c1b-5d29-a0c8-c88874711555",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3662.2105678141525,
+            "y": 783.97363759192137
+          },
+          "nodeIndex": "Render image",
+          "nodeLineageTag": "dbfb295b-06a0-55b8-ac13-8a7ff8032629",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 6352.808034982655,
+            "y": 795.97363759192137
+          },
+          "nodeIndex": "Theme",
+          "nodeLineageTag": "ee584df4-af74-5dfa-b32b-915e9207c88d",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 6737.1791017210126,
+            "y": 795.97363759192137
+          },
+          "nodeIndex": "Thumb image",
+          "nodeLineageTag": "ea89a98e-43c9-5096-96a6-11fa31bde3c0",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 7121.55016845937,
+            "y": 795.97363759192137
+          },
+          "nodeIndex": "Timescale",
+          "nodeLineageTag": "bd8b84d1-b48d-578e-aa89-16b1498f1045",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

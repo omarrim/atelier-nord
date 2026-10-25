@@ -1,0 +1,227 @@
+table DimProject
+	lineageTag: 98b1474b-fd93-5c94-8233-dc77633b6878
+
+	column ProjectKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 6b8cc605-2473-5b65-88a6-a692b59027d0
+		summarizeBy: none
+		sourceColumn: ProjectKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Project
+		dataType: string
+		lineageTag: d3c41ade-253b-5fb8-99ab-c560955a3c2f
+		summarizeBy: none
+		sourceColumn: Project
+		sortByColumn: RegisterOrder
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: 99ca3cf8-08f5-5f96-a117-72c9e26c2569
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column Latitude
+		dataType: double
+		formatString: 0.0000
+		lineageTag: cf5d0a31-af2e-5485-bd3a-3b0539283684
+		summarizeBy: none
+		sourceColumn: Latitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column Longitude
+		dataType: double
+		formatString: 0.0000
+		lineageTag: e424b6b7-c47c-5d51-b3ef-7e2a38ec7852
+		summarizeBy: none
+		sourceColumn: Longitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		lineageTag: 3a509195-a25b-5067-9aa1-7d255d3479dd
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column TypeLabel
+		dataType: string
+		lineageTag: 25a2b61c-4a9c-5c36-a7e0-76f103b9ff77
+		summarizeBy: none
+		sourceColumn: TypeLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column AreaM2
+		dataType: int64
+		formatString: #,0
+		lineageTag: 0d53c07c-ff52-5658-9732-aca02b2d896c
+		summarizeBy: none
+		sourceColumn: AreaM2
+
+		annotation SummarizationSetBy = Automatic
+
+	column ConstructionBudget
+		dataType: double
+		formatString: #,0
+		lineageTag: b805445f-6cf6-50a5-bccf-aa769cb30069
+		summarizeBy: none
+		sourceColumn: ConstructionBudget
+
+		annotation SummarizationSetBy = Automatic
+
+	column ContractFees
+		dataType: double
+		formatString: #,0
+		lineageTag: 2d213a72-66a0-500f-9499-15f9fd7ad91c
+		summarizeBy: none
+		sourceColumn: ContractFees
+
+		annotation SummarizationSetBy = Automatic
+
+	column PlannedHours
+		dataType: double
+		formatString: #,0
+		lineageTag: d7e754f9-a834-550a-9ae3-4ea61f7d03aa
+		summarizeBy: none
+		sourceColumn: PlannedHours
+
+		annotation SummarizationSetBy = Automatic
+
+	column LeadKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 3711d564-2a27-5d42-89ba-47728604fda7
+		summarizeBy: none
+		sourceColumn: LeadKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Client
+		dataType: string
+		lineageTag: f3486bdf-755e-578d-970a-3206592ccf06
+		summarizeBy: none
+		sourceColumn: Client
+
+		annotation SummarizationSetBy = Automatic
+
+	column Phase
+		dataType: string
+		lineageTag: 6a3f58fe-0bbd-5d76-b619-ab2db4b44b13
+		summarizeBy: none
+		sourceColumn: Phase
+
+		annotation SummarizationSetBy = Automatic
+
+	column PhaseProgress
+		dataType: double
+		formatString: 0%
+		lineageTag: aeb9f1bc-21e0-560d-aab5-d6649a09456b
+		summarizeBy: none
+		sourceColumn: PhaseProgress
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: 3413ecac-ab7f-598f-870b-616e30c9102c
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column StartDate
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: 5aabb82f-6284-5f5a-98a1-d9ca981791e6
+		summarizeBy: none
+		sourceColumn: StartDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column EndDate
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: 2455c317-82d7-5d49-9c1c-7f4527140062
+		summarizeBy: none
+		sourceColumn: EndDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column HandoverDate
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: f30afe04-59e9-550c-8653-8eb1d27da17a
+		summarizeBy: none
+		sourceColumn: HandoverDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column RegisterOrder
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: c0250ea1-3357-5175-bbb2-c79e8808d11f
+		summarizeBy: none
+		sourceColumn: RegisterOrder
+
+		annotation SummarizationSetBy = Automatic
+
+	column GanttOrder
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 697c8e6f-2826-5d5b-bb31-4c0c2214aaef
+		summarizeBy: none
+		sourceColumn: GanttOrder
+
+		annotation SummarizationSetBy = Automatic
+
+	column RenderSheet
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 48d2b8e5-2ce1-5a30-95a7-db317fd59dc5
+		summarizeBy: none
+		sourceColumn: RenderSheet
+
+		annotation SummarizationSetBy = Automatic
+
+	column RenderCell
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: ba888486-9432-52e1-abb3-727061d01883
+		summarizeBy: none
+		sourceColumn: RenderCell
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimProject = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DossierDonnees & "DimProject.parquet")),
+				    Typed = Table.TransformColumnTypes(Source, {{"ProjectKey", Int64.Type}, {"Project", type text}, {"City", type text}, {"Latitude", type number}, {"Longitude", type number}, {"Type", type text}, {"TypeLabel", type text}, {"AreaM2", Int64.Type}, {"ConstructionBudget", type number}, {"ContractFees", type number}, {"PlannedHours", type number}, {"LeadKey", Int64.Type}, {"Client", type text}, {"Phase", type text}, {"PhaseProgress", type number}, {"Status", type text}, {"StartDate", type date}, {"EndDate", type date}, {"HandoverDate", type date}, {"RegisterOrder", Int64.Type}, {"GanttOrder", Int64.Type}, {"RenderSheet", Int64.Type}, {"RenderCell", Int64.Type}})
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

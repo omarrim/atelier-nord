@@ -1,0 +1,57 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "Notifications open view",
+  "name": "4cc0d352f0c65799a246",
+  "options": {
+    "applyOnlyToTargetVisuals": true,
+    "targetVisualNames": [
+      "546b75a1fc3a5e0c8986",
+      "159d735b347f58c9a855",
+      "7a561e79d1fa522ba740",
+      "ecce8f1360c655f3a212",
+      "50177c56745b57f2ac87"
+    ],
+    "suppressData": true
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "bf8a12f9283d5e119339",
+    "sections": {
+      "bf8a12f9283d5e119339": {
+        "visualContainers": {
+          "546b75a1fc3a5e0c8986": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "159d735b347f58c9a855": {
+            "singleVisual": {
+              "visualType": "cardVisual",
+              "objects": {}
+            }
+          },
+          "7a561e79d1fa522ba740": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "ecce8f1360c655f3a212": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "50177c56745b57f2ac87": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          }
+        }
+      }
+    },
+    "objects": {}
+  }
+}

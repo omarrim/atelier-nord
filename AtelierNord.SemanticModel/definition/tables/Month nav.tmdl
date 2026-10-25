@@ -1,0 +1,37 @@
+table 'Month nav'
+	lineageTag: 6a4c04db-7aaa-51a5-af37-1df19db625d8
+
+	column Month
+		dataType: string
+		lineageTag: a1aa827b-1fb3-5453-bdf2-250b563888db
+		summarizeBy: none
+		sourceColumn: [Month]
+		sortByColumn: Ordre
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthStart
+		dataType: dateTime
+		isHidden
+		lineageTag: 109da2a8-56dc-5f65-8da1-7633724b5c47
+		summarizeBy: none
+		sourceColumn: [MonthStart]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ordre
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 758d5639-7f15-5656-b808-0857f021aee2
+		summarizeBy: none
+		sourceColumn: [Ordre]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Month nav' = calculated
+		mode: import
+		source =
+				SELECTCOLUMNS ( GENERATESERIES ( 0, 8 ), "Month", FORMAT ( EDATE ( DATE ( 2026, 10, 1 ), [Value] ), "mmmm yyyy" ),
+				    "MonthStart", EDATE ( DATE ( 2026, 10, 1 ), [Value] ), "Ordre", [Value] )
+

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "e95a7752b6845f289039",
+  "displayName": "Project",
+  "displayOption": "FitToPage",
+  "height": 1080,
+  "width": 1440,
+  "type": "Drillthrough",
+  "visibility": "HiddenInViewMode",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filter947ff36142e751eb9ecf",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DimProject"
+              }
+            },
+            "Property": "Project"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "8fdb5d940db55f919d74",
+    "type": "Drillthrough",
+    "acceptsFilterContext": "None",
+    "parameters": [
+      {
+        "name": "Param_Filter947ff36142e751eb9ecf",
+        "boundFilter": "Filter947ff36142e751eb9ecf",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DimProject"
+              }
+            },
+            "Property": "Project"
+          }
+        }
+      }
+    ]
+  }
+}

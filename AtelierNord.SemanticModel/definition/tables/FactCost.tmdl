@@ -1,0 +1,44 @@
+table FactCost
+	lineageTag: cd4e509e-0d1c-5369-8855-8590c11870b3
+
+	column ProjectKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 7c335f19-aa3b-5bf3-9dd7-6db33c27d1a1
+		summarizeBy: none
+		sourceColumn: ProjectKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: dateTime
+		formatString: mmm yyyy
+		lineageTag: b6e031dc-024d-5d30-af6a-359209e112c8
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Amount
+		dataType: double
+		formatString: #,0
+		lineageTag: ac8dc713-7e6b-5f4e-8681-4ffcf88bf474
+		summarizeBy: none
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactCost = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DossierDonnees & "FactCost.parquet")),
+				    Typed = Table.TransformColumnTypes(Source, {{"ProjectKey", Int64.Type}, {"Month", type date}, {"Amount", type number}})
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+

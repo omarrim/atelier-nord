@@ -1,0 +1,93 @@
+table FactTask
+	lineageTag: ae02c545-eae2-5cc3-ba04-13a9b702b2fe
+
+	column TaskKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 0996a6ba-2b28-5e79-8f22-81a713defde5
+		summarizeBy: none
+		sourceColumn: TaskKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProjectKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 3065176e-33da-5fb2-8283-1a71f5f350b6
+		summarizeBy: none
+		sourceColumn: ProjectKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column PersonKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 4b8dc54f-b00c-59cf-b346-8efa22fb2793
+		summarizeBy: none
+		sourceColumn: PersonKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Team
+		dataType: string
+		lineageTag: 7c3dba0b-285a-5070-89fe-689b518b3b68
+		summarizeBy: none
+		sourceColumn: Team
+
+		annotation SummarizationSetBy = Automatic
+
+	column Task
+		dataType: string
+		lineageTag: d088ee02-11b3-56a8-a7c9-fc62e63c503f
+		summarizeBy: none
+		sourceColumn: Task
+
+		annotation SummarizationSetBy = Automatic
+
+	column Created
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: 4e0c5038-398d-558d-bbd3-d222622e1f71
+		summarizeBy: none
+		sourceColumn: Created
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Due
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: 7add2c2c-9b8d-5f9d-b8e5-91f5291cab29
+		summarizeBy: none
+		sourceColumn: Due
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Done
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: 1dfd85fb-b182-5b8f-9669-ea5e3e887b81
+		summarizeBy: none
+		sourceColumn: Done
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition FactTask = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DossierDonnees & "FactTask.parquet")),
+				    Typed = Table.TransformColumnTypes(Source, {{"TaskKey", Int64.Type}, {"ProjectKey", Int64.Type}, {"PersonKey", Int64.Type}, {"Team", type text}, {"Task", type text}, {"Created", type date}, {"Due", type date}, {"Done", type date}})
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
+
